@@ -91,7 +91,7 @@ export default function Navbar() {
                         href="#get-started"
                         className="ml-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 dark:hover:bg-green-500 transition"
                     >
-                        Get Started
+                        Contribute
                     </Link>
                 </nav>
             </div>

@@ -34,3 +34,8 @@ body {
 .dark .text-outline {
   -webkit-text-stroke: 1px #fff;
 }
+
+.logo-brand {
+  max-height: 50px;
+  object-fit: contain;
+}

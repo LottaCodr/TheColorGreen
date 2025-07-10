@@ -2,8 +2,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import {
-    FaTwitter, FaInstagram, FaGlobe,
-    FaDribbble, FaYoutube, FaGithub, FaMedium
+    FaTwitter, FaInstagram,
+    FaYoutube, FaMedium
 } from 'react-icons/fa'
 import { BsFillPlayCircleFill } from 'react-icons/bs'
 import { motion } from 'framer-motion'
@@ -14,14 +14,14 @@ export default function Hero() {
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 pt-10 md:pt-20 relative">
 
                 {/* Social Icons */}
-                <div className="hidden md:flex flex-col gap-4 absolute left-0 top-1/2 -translate-y-1/2 pl-4 text-gray-600 dark:text-gray-300">
+                <div className="hidden  md:flex flex-col gap-4 absolute left-0 top-1/2 -translate-y-1/2 pl-4 text-gray-600 dark:text-gray-300">
                     <FaTwitter />
                     <FaInstagram />
-                    <FaGlobe />
+                    {/* <FaGlobe /> */}
                     <FaMedium />
-                    <FaDribbble />
+                    {/* <FaDribbble /> */}
                     <FaYoutube />
-                    <FaGithub />
+                    {/* <FaGithub /> */}
                 </div>
 
                 {/* Left Image */}
@@ -62,10 +62,10 @@ export default function Hero() {
                     </div>
 
                     {/* Center Text */}
-                    <h1 className="text-3xl md:text-4xl font-semibold text-gray-800 dark:text-white">
+                    <h1 className="text-6xl md:text-7xl font-semibold text-gray-800 dark:text-white">
                         THE COLOUR
                     </h1>
-                    <h2 className="text-6xl md:text-7xl font-extrabold tracking-tight text-outline">
+                    <h2 className="text-6xl md:text-7xl font-extrabold tracking-tight text-outline text-black dark:text-white">
                         GREEN
                     </h2>
                     <p className="text-sm md:text-base text-gray-600 dark:text-gray-300">
