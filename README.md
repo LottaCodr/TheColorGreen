@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Colour Green — TCG
 
-## Getting Started
+A monochrome editorial landing site for **TCG (The Colour Green)**, a sustainable-fashion events brand. The UI is implemented pixel-faithfully from the three Figma design mockups in [`app/design_mockup/`](app/design_mockup) — including the black side rails, gray model panels, stacked *THE COLOUR / GREEN* hero headline, brand strip, *E for Effort, E for Event*, *Experience Our Event*, testimonials, newsletter and footer.
 
-First, run the development server:
+## Stack
+
+- **Vite 6** + React 19 + TypeScript
+- **Tailwind CSS v4** (via `@tailwindcss/vite`, theme tokens in `src/index.css`)
+- React Router 7 (multi-page), Framer Motion (scroll/animation), Lucide icons
+- Fonts: Archivo Variable (sans) + Playfair Display Variable (serif brand wordmarks)
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build → dist/
+npm run preview  # serve the production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Route             | Page                                                        | Mockup |
+| ----------------- | ----------------------------------------------------------- | ------ |
+| `/`               | Home — hero, brands, E for Effort, Experience, testimonials, newsletter | `Group 1000001757.png` |
+| `/events`         | Event gallery — hero photo, 6 event cards                    | `Group 1000001758.png` |
+| `/events/:slug`   | Event detail — ABOUT THE EVENT, EXPERIENCE MORE EVENTS       | `Group 1000001759.png` |
+| `/contact`        | Contact page (the navbar links to it, so a page was added)   | — |
+| `*`               | 404                                                          | — |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Design system (sampled from the mockups)
 
-## Learn More
+- **Palette:** white `#fff`, ink `#484848` (headings), body `#6b6b6b`, mute `#8d8d8d`, faint `#9e9e9e`, panel `#e0e0e0` (hero side panels), accent red `#ff4646` (“Experience More” links), black buttons with sharp corners.
+- **Signature elements:** full-height black side rails on the homepage (≥1544px viewports), grayscale photography that colourises on hover, borderless cards, white “Subscribe Now” button with black border, borderless email input.
 
-To learn more about Next.js, take a look at the following resources:
+## Animations (researched & implemented)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Chosen per 2025/2026 landing-page research: subtle, purposeful motion that uses **transform/opacity only**, with full `prefers-reduced-motion` support (`MotionConfig reducedMotion="user"` + CSS fallback).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Hero — editorial word-by-word headline reveal, staggered thumbnail entrances, scroll-linked parallax on the model panels.
+2. Brand strip — infinite marquee, pauses on hover, soft edge fades.
+3. Scroll reveals — fade-up, once-only, staggered card entrances (IntersectionObserver-based `whileInView`).
+4. Play buttons — pulsing ring micro-interaction (hero thumbs + event film).
+5. Cards & photos — grayscale→colour + slow zoom on hover; red “Experience More” arrow nudges diagonally.
+6. Buttons — hover inversion (black↔white/border), tap-scale feedback.
+7. Navbar — shrinks on scroll, hairline + 2px black scroll-progress bar, animated mobile menu.
+8. Page transitions — 300ms fade/slide between routes.
+9. Forms — underline border animates to black on focus; “Subscribed ✓” success micro-interaction.
 
-## Deploy on Vercel
+## What the mockups were missing (added after research)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Contact page (the navbar's `Contact` link had no destination)
+- Responsive navigation for mobile/tablet (hamburger + animated overlay)
+- SEO/meta (description, OG tags, per-route titles), favicon, skip-link, aria labelling
+- Hover/focus states, keyboard accessibility, reduced-motion fallbacks
+- Real copy replacing the placeholder lorem text (same layout rhythm)
+- A 404 page, lazy-loaded imagery, and optimised WebP assets (25 MB PNG → 1.9 MB WebP)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Assets
+
+All photography in `public/images/` was AI-generated for the site (16 images: models, event film posters, avatars, gallery/event heroes, 6 event cards) and converted to WebP.
