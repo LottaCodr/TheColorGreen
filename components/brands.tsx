@@ -3,12 +3,12 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 const brands = [
-    { name: 'Dream Works', src: '/brands/dreamworks.png' },
-    { name: 'ESPN', src: '/brands/espn.png' },
-    { name: 'Cambridge University', src: '/brands/cambrdge.png' },
-    { name: 'Wendy', src: '/brands/wendy.png' },
-    { name: 'Paco', src: '/brands/paco.png' },
-    { name: 'Calvin Klein', src: '/brands/calvin.png' },
+    { name: 'Dream Works', src: '/New folder/dreamworks.png' },
+    { name: 'ESPN', src: '/New folder/espn.png' },
+    { name: 'Cambridge University', src: '/New folder/cambrdge.png' },
+    { name: 'Wendy', src: '/New folder/wendy.png' },
+    { name: 'Paco', src: '/New folder/paco.png' },
+    { name: 'Calvin Klein', src: '/New folder/calvin.png' },
 ]
 
 export default function BrandSection() {

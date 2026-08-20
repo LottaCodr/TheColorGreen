@@ -62,7 +62,7 @@ export default function EventSection() {
                     role="button"
                 >
                     <Image
-                        src="/event/event1.png"
+                        src="/heropics/group.png"
                         alt="Event highlight"
                         width={600}
                         height={400}

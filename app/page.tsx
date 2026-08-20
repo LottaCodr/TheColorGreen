@@ -1,7 +1,11 @@
+'use client'
 import BrandSection from "@/components/brands";
 import EventSection from "@/components/event";
+import Features from "@/components/features";
+import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import Navbar from "@/components/navbar";
+import ScrollToTop from "@/components/scroll-to-top";
 import { useEffect, useRef } from "react";
 
 export default function Home() {
@@ -27,10 +31,12 @@ export default function Home() {
         <section className="w-full max-w-5xl mb-8">
           <EventSection />
         </section>
+        <section className="w-full mb-8">
+          <Features />
+        </section>
       </main>
-      <footer className="w-full py-6 bg-white border-t text-center text-gray-500 text-sm">
-        &copy; {new Date().getFullYear()} Your Company. All rights reserved.
-      </footer>
+      <Footer />
+      <ScrollToTop />
     </div>
   );
 }

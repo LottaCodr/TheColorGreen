@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import clsx from 'clsx'
+import ThemeToggle from './theme-toggle'
 
 const sections = [
   { id: 'home', label: 'Home' },
@@ -122,6 +123,7 @@ export default function Navbar() {
             </Link>
           ))}
 
+          <ThemeToggle />
           <Link
             href="#get-started"
             onClick={e => handleNavLinkClick(e, 'get-started')}
@@ -197,13 +199,16 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
-          <Link
-            href="#get-started"
-            onClick={e => handleNavLinkClick(e, 'get-started')}
-            className="mt-4 block bg-gradient-to-tr from-green-600 to-green-500 text-white text-center px-5 py-3 rounded-lg font-semibold shadow hover:from-green-700 hover:to-green-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 transition"
-          >
-            Get Started
-          </Link>
+          <div className="mt-4 flex items-center justify-center gap-4">
+            <ThemeToggle />
+            <Link
+              href="#get-started"
+              onClick={e => handleNavLinkClick(e, 'get-started')}
+              className="block bg-gradient-to-tr from-green-600 to-green-500 text-white text-center px-5 py-3 rounded-lg font-semibold shadow hover:from-green-700 hover:to-green-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 transition"
+            >
+              Get Started
+            </Link>
+          </div>
         </nav>
       </div>
     </header>
